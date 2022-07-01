@@ -1,7 +1,24 @@
 import React from 'react'
+import Head from 'next/head';
 
-export default function Layout() {
+import NavBar from './Navbar';
+import Footer from './Footer';
+
+export default function Layout({ children }) {
   return (
-    <div>Layout</div>
+    <div className='layout'>
+      <Head>
+        <title>The next ebay</title>
+      </Head>
+      <header>
+        <NavBar />
+      </header>
+      <main className='main-container'>
+        {children}
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   )
 }

@@ -23,10 +23,10 @@ export default function FooterBanner( {footerBanner: { discount, largeText1, lar
           </Link>
         </div>
         
-       {/* <img 
+        <img 
           src={urlFor(image)}
           className='footer-banner-image' 
-  />*/ }
+  />
 
       </div>
     </div>

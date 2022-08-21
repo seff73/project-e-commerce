@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@paypal/react-paypal-js": "^7.8.1",
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.25.0",
+    "axios": "^0.27.2",
     "canvas-confetti": "^1.5.1",
     "next": "12.1.6",
     "next-sanity-image": "^3.2.1",

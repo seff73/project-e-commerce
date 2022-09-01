@@ -16,7 +16,7 @@ export default function Cart() {
   return (
     <div className='cart-wrapper' ref={cartRef}> 
       <div className='cart-container'>
-        <buton
+        <button
           type='button'
           className='cart-heading'
           onClick={() => setShowCart(false)}
@@ -24,7 +24,7 @@ export default function Cart() {
           <AiOutlineLeft />
           <span className='heading'>Your Cart</span>
           <span className='cart-num-items'>({totalQuantities} items)</span>
-        </buton>
+        </button>
 
         {cartItems.length < 1 && (
           <div className='empty-cart'>
@@ -96,7 +96,7 @@ export default function Cart() {
             </div>*/}
 
             <div className='btn-container'>
-              <PaypalBtn />
+              <PaypalBtn amount={totalPrice} />
             </div>
 
           </div>

@@ -18,6 +18,7 @@ export default function Product({ product: { image, name, slug, price } }) {
                 <p className='product-price'>${price}</p>
             </div>
         </Link>
+        
     </div>
   )
 }

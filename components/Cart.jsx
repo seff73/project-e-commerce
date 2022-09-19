@@ -43,6 +43,8 @@ export default function Cart() {
         )}
 
         <div className='product-container'>
+          <p className='product-title-price'>Price</p>
+
           {cartItems.length >= 1 && cartItems.map((item) => (
             <div className='product' key={item._id}>
               <img src={urlFor(item?.image[0])} className='cart-product-image' />
@@ -52,25 +54,26 @@ export default function Cart() {
                   <h4>${item.price}</h4>
                 </div>
                 <div className='flex bottom'>
-                  <div>
+                  {/*<div>
                     <p className='quantity-desc'>
                         <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec') }>
                           <AiOutlineMinus />
                         </span>
-                        <span className='num' /*onClick=""*/>
+                        <span className='num' onClick="">
                           {item.quantity}
                         </span>
                         <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
                           <AiOutlinePlus />
                         </span>
                     </p>
-                  </div>
+                  </div>*/}  
                   <button
                     type='button'
                     className='remove-item'
                     onClick={() => onRemove(item)}
                   >
-                    <TiDeleteOutline />
+                    {/*<TiDeleteOutline />*/}
+                    Delete
                   </button>
 
                 </div>

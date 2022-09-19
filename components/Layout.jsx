@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <div className='layout'>
       <Head>
-        <title>The next ebay</title>
+        <title>Smart and Sapiens</title>
       </Head>
       <header>
         <NavBar />

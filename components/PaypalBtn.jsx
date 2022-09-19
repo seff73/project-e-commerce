@@ -16,7 +16,6 @@ export default function PaypalBtn({amount}) {
     
   return (
     <div>
-        <h4> monto:{monto}, totalPrice:{totalPrice}</h4>
     { monto === totalPrice ? 
         <PayPalButtons createOrder={async () => {
             try {

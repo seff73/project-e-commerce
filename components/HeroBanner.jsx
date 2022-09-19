@@ -21,6 +21,7 @@ const HeroBanner = ({ heroBanner }) =>
                     <h5>Description</h5>
                     <p>{heroBanner.desc}</p>
                 </div>
+                {console.log(heroBanner.product)}
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ import { useStateContext } from '../../context/StateContext';
 import { client, urlFor } from '../../lib/client';
 
 export default function ProductDetails({ product, products }) {
-    const { image, name, details, price } = product;
+    const { image, name, details, price, rating } = product;
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
@@ -48,7 +48,7 @@ export default function ProductDetails({ product, products }) {
                         <AiOutlineStar />
                     </div>
                     <p>
-                        (188)
+                        ({rating || 188})
                     </p>
                 </div>
                 <h4>Details: </h4>
@@ -60,7 +60,7 @@ export default function ProductDetails({ product, products }) {
                         <span className='minus'
                         onClick={decQty}><AiOutlineMinus />
                         </span>
-                        <span className='number'
+                        <span className='num'
                         /*onClick=""*/>{qty}</span>
                         <span className='plus'
                         onClick={incQty}><AiOutlinePlus />

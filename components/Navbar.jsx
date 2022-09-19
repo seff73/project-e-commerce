@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div className='navbar-container'>
       <p className='logo'>
-        <Link href='/'>Next Ebay</Link>
+        <Link href='/'>Smart & Sapiens</Link>
       </p>
 
       <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>

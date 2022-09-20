@@ -43,7 +43,7 @@ export default function Cart() {
         )}
 
         <div className='product-container'>
-          <p className='product-title-price'>Price</p>
+          {cartItems.length >= 1 && <p className='product-title-price'>Price</p>}
 
           {cartItems.length >= 1 && cartItems.map((item) => (
             <div className='product' key={item._id}>

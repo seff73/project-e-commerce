@@ -2,12 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { PayPalButtons } from '@paypal/react-paypal-js/';
 import axios from 'axios';
 import { useStateContext } from '../context/StateContext';
+import emailjs from '@emailjs/browser';
+import { useRouter } from 'next/router';
 
 
 export default function PaypalBtn({amount}) {
-    const { totalPrice } = useStateContext();
+    const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext();
     //let totalAmount = totalPrice
-    const [ monto, setMonto ] = useState(totalPrice)
+    const [ monto, setMonto ] = useState(totalPrice);
+
+    const router = useRouter();
+
+
+    const templateParams = {
+        user_name: "",
+        user_surname: "",
+        user_email: "",
+        user_item_list: "",
+        user_quantity: "",
+        user_amount: "",
+    }
+
     useEffect(() => {
         if(totalPrice !== monto) {
             setMonto(totalPrice);
@@ -26,13 +41,15 @@ export default function PaypalBtn({amount}) {
                         "Content-Type": "application/json"
                     },
                     data: {
-                        amount: monto
+                        amount: monto,
+                        quantity: totalQuantities,
                     },
                 });
 
                 return res.data.id;
 
             } catch (error) {
+                //router.push('/success');
                 console.log(error);
             }
         }}
@@ -42,12 +59,31 @@ export default function PaypalBtn({amount}) {
             actions.order.capture()
             .then(function(orderData) {
                 // Successful capture! For dev/demo purposes:
-                console.log(orderData.payer.email_address)
-                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                
+                //console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                 const transaction = orderData.purchase_units[0].payments.captures[0];
-                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee your email for all available details`);
+
+
+                templateParams.user_name = orderData.payer.name.given_name;
+                templateParams.user_surname = orderData.payer.name.surname;
+                templateParams.user_email = orderData.payer.email_address;
+                templateParams.user_item_list = JSON.stringify(cartItems.map((item) => item.name + " x " + item.quantity));
+                templateParams.user_amount = totalPrice;
+                templateParams.user_transaction_status = transaction.status;
+                templateParams.user_transaction_id = transaction.id
+                templateParams.user_quantity = totalQuantities;
+
+                emailjs.send('service_zilmxnm', 'template_mdmmlhg', templateParams, 'k-w62nZD0xoIwA9Qn')
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+                //actions.redirect('http://localhost:3000/success');
+                setShowCart(false);
+                router.push('/success');
             });
-            //actions.redirect('http://localhost:3000/successPage');
         }}
         style={{ layout: "horizontal", color: "blue" }} />
     :false}

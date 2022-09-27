@@ -118,6 +118,7 @@ width: 100%;
  background-color: #ebebeb;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+  object-fit: contain;
 }
 
 .product-name{
@@ -145,7 +146,7 @@ width: 100%;
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #1477ff;
   color: white;
   border: none;
   margin-top: 40px;
@@ -153,6 +154,9 @@ width: 100%;
   font-weight: 500;
   cursor: pointer;
   z-index:10000 !important;
+}
+.hero-banner-container button:hover{
+  transform:scale(1.1,1.1);
 }
 
 .hero-banner-container h3{
@@ -171,6 +175,11 @@ width: 100%;
   right:5%;
   width: 230px;
   height: 280px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+.hero-banner-image:hover{
+  transform: scale(1.1,1.1);
 }
 
 
@@ -237,6 +246,9 @@ text-align: end;
   font-weight: 500;
   cursor: pointer;
 }
+.banner-desc button:hover{
+  transform: scale(1.1,1.1);
+}
 .banner-desc .left h3{
   font-weight: 900;
   font-size: 80px;
@@ -254,6 +266,11 @@ text-align: end;
   /*left: 25%;*/
   width: 240px;
   height: 330px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+.footer-banner-image:hover{
+  transform: scale(1.1,1.1);
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -364,6 +381,7 @@ padding: 20px 10px;
   height: 100px;
     border-radius: 15px;
  background-color: #ebebeb;
+ object-fit: contain;
 }
 .item-desc .flex{
   display: flex;
@@ -450,9 +468,11 @@ padding: 30px 65px;
   height: 400px;
   cursor: pointer;
   transition: .3s ease-in-out;
+  object-fit: contain;
 }
 .product-detail-image:hover{
-  background-color: #f02d34;
+  background-color: #324d67;
+  transform: scale(1.2,1.2);
 
 }
 .small-images-container{
@@ -466,10 +486,11 @@ padding: 30px 65px;
   width: 70px;
   height: 70px;
   cursor: pointer;
+  object-fit: contain;
 }
 
 .selected-image{
-  background-color:#f02d34;
+  background-color:#324d67;
 }
 .reviews{
   color: #f18e01;
@@ -484,6 +505,7 @@ padding: 30px 65px;
 }
 .product-detail-desc p{
   margin-top: 10px;
+
 }
 .reviews p{
   color: #324d67;
@@ -652,6 +674,7 @@ margin-top: 160px;
     height: 62%;
     top: -2%;
     right: -6%;
+    cursor: pointer;
   }
   .footer-banner-container{
     height: 560px;
@@ -661,7 +684,8 @@ margin-top: 160px;
     width: 77%;
     left: 30%;
     top: 6%;
-    height: 56%
+    height: 56%;
+    cursor: pointer;
   }
   .banner-desc .left h3{
     font-weight: 900;
@@ -706,6 +730,7 @@ margin-top: 160px;
   .product-detail-container .product-detail-image{
     width: 350px;
     height: 350px;
+    object-fit: contain;
   }
   .cart-container{
     width: 415px;
@@ -724,6 +749,7 @@ margin-top: 160px;
   .product .cart-product-image{
     width: 25%;
     height: 25%;
+    object-fit: contain;
   }
   .buttons .add-to-cart{
     width: 150px;

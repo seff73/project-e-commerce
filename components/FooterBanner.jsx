@@ -16,17 +16,19 @@ export default function FooterBanner( {footerBanner: { discount, largeText1, lar
         </div>
         <div className='right'>
           <p>{smallText}</p>
-          <h3>{midText}</h3>
+          <h3>${midText}</h3>
           <p>{desc}</p>
           <Link href={`/product/${product}`}>
             <button type='button'>{buttonText}</button>
           </Link>
         </div>
         
-        <img 
-          src={urlFor(image)}
-          className='footer-banner-image' 
-  />
+        <Link href={`/product/${product}`}>
+          <img 
+            src={urlFor(image)}
+            className='footer-banner-image' 
+          />
+        </Link>
 
       </div>
     </div>

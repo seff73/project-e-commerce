@@ -52,21 +52,23 @@ export default function ProductDetails({ product, products }) {
                     </p>
                 </div>
                 <h4>Details: </h4>
-                <p>{details}</p>
+                <p>{details.substr(0, 1000)}...</p>
                 <p className='price'>${price}</p>
-                <div className='quantity'>
+                
+                {/*<div className='quantity'>
                     <h3>Quantity:</h3>
                     <p className='quantity-desc'>
                         <span className='minus'
                         onClick={decQty}><AiOutlineMinus />
                         </span>
                         <span className='num'
-                        /*onClick=""*/>{qty}</span>
+                        onClick="">{qty}</span>
                         <span className='plus'
                         onClick={incQty}><AiOutlinePlus />
                         </span>
                     </p>
-                </div>
+                </div>*/}
+
                 <div className='buttons'>
                     <button type='button' 
                     className='add-to-cart'
@@ -82,7 +84,7 @@ export default function ProductDetails({ product, products }) {
         <div className='maylike-products-wrapper'>
             <h2>You may also like</h2>
             <div className='marquee'>
-                <div className='maylike-products-container'>
+                <div className='maylike-products-container track'>
                     {products.map((item) => (
                         <Product key={item._id} product={item} />
                     ))}

@@ -5,13 +5,16 @@ import { BsBagCheckFill } from 'react-icons/bs';
 import { useStateContext } from '../context/StateContext';
 
 export default function success() {
-    const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
+    const { setCartItems, setTotalPrice, setTotalQuantities, setShowCart } = useStateContext();
 
     useEffect(() => {
+      //setShowCart(false)
       localStorage.clear();
       setCartItems([]);
       setTotalPrice(0);
       setTotalQuantities(0);
+      
+      
     }, []);
 
   return (
@@ -24,8 +27,8 @@ export default function success() {
             <p className='email-msg'>Check your email inbox for the receipt.</p>
             <p className='description'>
                 If you have any questions, please email
-                <a className='email' href='mailto:order@example.com'>
-                  order@example.com
+                <a className='email' href='mailto:seff73@gmail.com'>
+                  support@smartandsapiens.com
                 </a>
             </p>
             <Link href='/'> 

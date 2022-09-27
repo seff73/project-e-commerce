@@ -10,6 +10,8 @@ export const StateContext = ({ children }) => {
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1);
 
+    const [emailPayer, setEmailPayer] = useState('email');
+
     let foundProduct;
     let index;
 
@@ -76,6 +78,7 @@ export const StateContext = ({ children }) => {
             return prevQty - 1
     });
     };
+ 
 
     return (
         <Context.Provider
@@ -93,7 +96,8 @@ export const StateContext = ({ children }) => {
                 onRemove,
                 setCartItems,
                 setTotalPrice,
-                setTotalQuantities, 
+                setTotalQuantities,
+                                
             }}
         >
             {children}

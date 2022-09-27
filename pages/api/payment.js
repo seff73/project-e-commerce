@@ -23,12 +23,30 @@ export default async function handler(req, res) {
         {
           amount: {
             currency_code: "USD",
-            value: req.body.amount
-          }
+            value: req.body.amount,
+            breakdown: {
+              item_total: {
+                currency_code: "USD",
+                value: req.body.amount,
+              }
+            }
+          },
+          items: [
+            {
+              name: "Ebook digital",
+              description: "pdf libro digital no devoluciones",
+              unit_amount: {
+                currency_code: "USD",
+                value: req.body.amount,
+              },
+              quantity: "1",
+            }
+
+          ]
         },
       ],
       application_context: {
-        brand_name: "The Next Ebay.com",
+        brand_name: "Smart and Sappiens",
         landing_page: "NO_PREFERENCE",
         user_action: "PAY_NOW",
         //return_url: "http://localhost:3000",

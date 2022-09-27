@@ -11,7 +11,7 @@ import { urlFor } from '../lib/client';
 
 export default function Cart() {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove, } = useStateContext();
   
   return (
     <div className='cart-wrapper' ref={cartRef}> 
@@ -84,7 +84,8 @@ export default function Cart() {
         {cartItems.length >= 1 && (
           <div className='cart-bottom'>
             <div className='total'>
-              <h3>Subtotal:</h3>
+              <h3>Subtotal :</h3>
+              
               <h3>${totalPrice}</h3>
             </div>
             

@@ -1,8 +1,12 @@
 import React from 'react';
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
+//import { DEFAULT_PAYPAL_NAMESPACE } from '@paypal/react-paypal-js/dist/types/constants';
+
+
 
 export default function Home({ products, bannerData }) {
+
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
@@ -17,6 +21,7 @@ export default function Home({ products, bannerData }) {
       </div>
 
       <FooterBanner footerBanner={bannerData && bannerData[1] } />
+
     </>
   )
 };

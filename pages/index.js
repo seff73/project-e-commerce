@@ -1,7 +1,7 @@
 import React from 'react';
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
-//import { DEFAULT_PAYPAL_NAMESPACE } from '@paypal/react-paypal-js/dist/types/constants';
+
 
 
 

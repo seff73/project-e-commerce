@@ -9,7 +9,7 @@ import { StateContext } from '../context/StateContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <PayPalScriptProvider options={{ "client-id": "AZ9T7Kt9-snBWcstuinejrsrizouOLoVgwvEDPqSDykkc6EPzg9Bpu9AzgYncZ313v1QqAWCh5-Q5Fo9" }}>
+    <PayPalScriptProvider options={{ "client-id": `${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}` }}>
       <StateContext>
         <Layout>
           <Component {...pageProps} />

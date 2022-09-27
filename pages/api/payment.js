@@ -33,8 +33,8 @@ export default async function handler(req, res) {
           },
           items: [
             {
-              name: "Ebook digital",
-              description: "pdf libro digital no devoluciones",
+              name: "Digital order",
+              description: "web service payment",
               unit_amount: {
                 currency_code: "USD",
                 value: req.body.amount,
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         },
       ],
       application_context: {
-        brand_name: "Smart and Sappiens",
+        brand_name: "Smart and Sapiens",
         landing_page: "NO_PREFERENCE",
         user_action: "PAY_NOW",
         //return_url: "http://localhost:3000",

@@ -9,9 +9,10 @@ export const StateContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1);
-
-    const [emailPayer, setEmailPayer] = useState('email');
-
+    
+    const [allProducts, setAllProducts] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
+    
     let foundProduct;
     let index;
 
@@ -78,6 +79,7 @@ export const StateContext = ({ children }) => {
             return prevQty - 1
     });
     };
+
  
 
     return (
@@ -97,6 +99,12 @@ export const StateContext = ({ children }) => {
                 setCartItems,
                 setTotalPrice,
                 setTotalQuantities,
+
+                allProducts,
+                setAllProducts,
+
+                searchResult,
+                setSearchResult,
                                 
             }}
         >

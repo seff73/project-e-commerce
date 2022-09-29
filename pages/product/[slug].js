@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {  AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
@@ -9,7 +9,14 @@ import { client, urlFor } from '../../lib/client';
 export default function ProductDetails({ product, products }) {
     const { image, name, details, price, rating } = product;
     const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+    const { decQty, incQty, qty, onAdd, setShowCart, allProducts, setAllProducts } = useStateContext();
+    
+    useEffect(() => {
+        if(products.length !== allProducts.length) {
+            setAllProducts(products);
+        };
+      
+    }, [products])
 
     const handleBuyNow = () => {
         onAdd(product, qty);

@@ -35,7 +35,7 @@ export default function PaypalBtn({amount}) {
         <PayPalButtons createOrder={async () => {
             try {
                 const res = await axios({
-                    url: "http://localhost:3000/api/payment",
+                    url: "/api/payment",
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

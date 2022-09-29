@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { client } from '../lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
+import { useStateContext } from '../context/StateContext';
 
 
 
 
 export default function Home({ products, bannerData }) {
+  const { setAllProducts, allProducts } = useStateContext();
 
+  useEffect(() => {
+    setAllProducts(products);
+
+  }, [])
+  
+
+  
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
@@ -17,7 +26,7 @@ export default function Home({ products, bannerData }) {
       </div>
 
       <div className='products-container'>
-        {products?.map((product) => <Product key={product._id} product={product} />)}
+        {allProducts?.map((product) => <Product key={product._id} product={product} />)}
       </div>
 
       <FooterBanner footerBanner={bannerData && bannerData[1] } />

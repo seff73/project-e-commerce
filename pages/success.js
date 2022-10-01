@@ -4,7 +4,7 @@ import { BsBagCheckFill } from 'react-icons/bs';
 
 import { useStateContext } from '../context/StateContext';
 
-export default function success() {
+export default function Success() {
     const { setCartItems, setTotalPrice, setTotalQuantities, setShowCart } = useStateContext();
 
     useEffect(() => {

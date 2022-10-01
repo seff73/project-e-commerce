@@ -800,15 +800,87 @@ margin-top: 160px;
 }
 
 @media screen and (max-width:800px) {
+  .layout{
+    padding: 0%;
+  }
+  .navbar-container{
+    background: #232F3E;
+    width: 100%;
+    margin: 0%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .logo{
+    font-size: 20px;
+    margin-top: 12px;
+    margin-left: 3%;
+    padding-bottom: 2%;
+  }
+  .search{
+    margin-top: 0%;
+    width: 100%;
+    height: 55px;
+  }
+  .search-inputs{
+    width: 100%;
+    height: 100%;
+  }
+  .search input{
+    width: 88%;
+    font-size: 15px;
+  }
+  .search-icon{
+    margin-left: 87%;
+  }
+  .search-icon svg{
+    font-size: 30px;
+  }
+  .cart-icon{
+    padding: 0%;
+    position: absolute;
+  }
+  .cart-icon svg{
+    margin-left: -100%;
+    width: 35px;
+    height: 35px;
+    margin-top: 25%;
+    color: #FFFFFF;
+  }
+  .cart-item-qty{
+    right: 25%;
+    top: 20%;
+    font-size: 17px;
+    width: 24px;
+    height: 24px;
+  }
   .hero-banner-container{
     height: 560px;
   }
   .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    right: 30%;
     cursor: pointer;
+  }
+  .hero-banner-container button{
+    position: absolute;
+    bottom: 5%;
+    right: 40%;
+    border-radius: 20%;
+  }
+  .desc{
+    bottom: -200px;
+    position: relative;
+    right: 0%;
+    width: 100%;
+    padding: 10%;
+  }
+  .desc h5{
+    align-self: center;
+  }
+  .desc p{
+    align-self: center;
   }
   .footer-banner-container{
     height: 560px;

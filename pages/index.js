@@ -22,7 +22,7 @@ export default function Home({ products, bannerData }) {
       
       <div className='products-heading'>
         <h2>Best Selling Products</h2>
-        <p>"Once you learn to read, you will be forever free"</p>
+        <p>Once you learn to read, you will be forever free!</p>
       </div>
 
       <div className='products-container'>

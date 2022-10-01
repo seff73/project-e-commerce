@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 
 export default function PaypalBtn({amount}) {
-    const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext();
+    const { totalPrice, totalQuantities, cartItems, setShowCart, invoiceList } = useStateContext();
     //let totalAmount = totalPrice
     const [ monto, setMonto ] = useState(totalPrice);
 
@@ -18,21 +18,39 @@ export default function PaypalBtn({amount}) {
         user_name: "",
         user_surname: "",
         user_email: "",
-        user_item_list: "",
-        user_quantity: "",
-        user_amount: "",
-    }
+        user_item_list: JSON.stringify(cartItems.map((item) => item.name + " x " + item.quantity)),
+        user_quantity: totalQuantities,
+        user_amount: totalPrice,
+    };
 
     useEffect(() => {
         if(totalPrice !== monto) {
             setMonto(totalPrice);
         }
-    },[totalPrice, monto])
+    },[totalPrice, monto]);
+
+    const handleOrder = () => {
+        let invoiceOrder = invoiceList[totalPrice];
+        !invoiceOrder && (invoiceOrder = invoiceList[7.99])
+        
+        emailjs.send('service_zilmxnm', 'template_mdmmlhg', templateParams, 'k-w62nZD0xoIwA9Qn')
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+
+        window.open(invoiceOrder, '_blank');
+        setShowCart(false);
+        router.push('/success');
+        
+    };
     
   return (
     <div>
-    { monto === totalPrice ? 
-        <PayPalButtons createOrder={async () => {
+        <div className='paypal-btn-alter' onClick={handleOrder}></div> 
+    { monto === totalPrice ?
+        <PayPalButtons className='paypal-btn-main' /*createOrder={async () => {
             try {
                 const res = await axios({
                     url: "/api/payment",
@@ -52,9 +70,9 @@ export default function PaypalBtn({amount}) {
                 //router.push('/success');
                 console.log(error);
             }
-        }}
+        }}*/
         onCancel = {data => console.log("Canceled Order")}
-        onApprove = {(data, actions) => {
+        /*onApprove = {(data, actions) => {
             //console.log(data.payer.email_address);
             actions.order.capture()
             .then(function(orderData) {
@@ -84,8 +102,8 @@ export default function PaypalBtn({amount}) {
                 setShowCart(false);
                 router.push('/success');
             });
-        }}
-        style={{ layout: "horizontal", color: "blue" }} />
+        }}*/
+        style={{ layout: "horizontal", color: "blue", shape: "pill", label: 'checkout' }} />
     :false}
     </div>
   )

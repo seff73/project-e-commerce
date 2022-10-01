@@ -24,11 +24,15 @@ export default function success() {
                 <BsBagCheckFill />
             </p>
             <h2>Thank you for your order!</h2>
-            <p className='email-msg'>Check your email inbox for the receipt.</p>
+            <p className='email-msg'>When you complete the payment, check your email inbox for the receipt.</p>
             <p className='description'>
                 If you have any questions, please email
                 <a className='email' href='mailto:seff73@gmail.com'>
                   support@smartandsapiens.com
+                </a>
+                <br/>
+                <a className='email' href='mailto:seff73@gmail.com'>
+                  seff73@gmail.com
                 </a>
             </p>
             <Link href='/'> 

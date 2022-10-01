@@ -429,6 +429,18 @@ text-align: end;
   position: relative;
   
 }
+.paypal-btn-main{
+  z-index: 4;
+  position: relative;
+}
+.paypal-btn-alter{
+  height: 45px;
+  position: absolute;
+  z-index: 100;
+  width: 400px;
+  background: transparent;
+  cursor: pointer;
+}
 
 .footer-container{
   color: #324d67;

@@ -80,6 +80,25 @@ export const StateContext = ({ children }) => {
     });
     };
 
+    const invoiceList = {
+        5.65: 'https://www.paypal.com/invoice/p/#E2R3UQ367XGK6UGG',
+        7.99: 'https://www.paypal.com/invoice/p/#U4M8ADL5822JQZPA',
+        9.99: 'https://www.paypal.com/invoice/p/#VJEDBQ6WVYQRNM5Q',
+        11.30: 'https://www.paypal.com/invoice/p/#PF3ZV4LKQLWYCPZW',
+        13.64: 'https://www.paypal.com/invoice/p/#HY6CWFM3C45FLARK',
+        14.99: 'https://www.paypal.com/invoice/p/#6YFM8FAW92PTVGHN',
+        15.98: 'https://www.paypal.com/invoice/p/#SLF52HM4D7C2WUTJ',
+        17.98: 'https://www.paypal.com/invoice/p/#XCQHEZALH4PCXS8W',
+        19.98: 'https://www.paypal.com/invoice/p/#88ET8A4HXYKF8L7B',
+        23.63: 'https://www.paypal.com/invoice/p/#DDBJGPX4DN82ZT6V',        
+        23.97: 'https://www.paypal.com/invoice/p/#FMBXXU85QL89LMUT',
+        29.97: 'https://www.paypal.com/invoice/p/#XHZ46LWCBCSSZM64',
+        31.96: 'https://www.paypal.com/invoice/p/#9UMUU6Y3XLQJPL7L',
+        39.95: 'https://www.paypal.com/invoice/p/#P64BZG6EPMHT326D',
+        39.96: 'https://www.paypal.com/invoice/p/#VHZ789T6PLVW5FKJ',
+        49.95: 'https://www.paypal.com/invoice/p/#WLUY4A8VPERYSCXZ',
+    };
+
  
 
     return (
@@ -105,6 +124,8 @@ export const StateContext = ({ children }) => {
 
                 searchResult,
                 setSearchResult,
+
+                invoiceList,
                                 
             }}
         >

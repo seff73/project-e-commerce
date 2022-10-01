@@ -4,7 +4,7 @@ import { Product } from '../components'
 import { useStateContext } from '../context/StateContext'
 import { useRouter } from 'next/router';
 
-export default function results() {
+export default function Results() {
     const { searchResult, allProducts } = useStateContext();
     const router = useRouter();
 
@@ -21,7 +21,7 @@ export default function results() {
                 <p className='empty-result'>Sorry! No result found:(
                 </p>
                 <p className='empty-result-desc'>
-                    We're sorry what you were looking for. Please try another search
+                    We are sorry what you were looking for. Please try another search
                 </p>
                 <button type='button' onClick={handleClick}>Smart and Sapiens</button>
             </div>

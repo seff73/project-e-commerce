@@ -41,6 +41,7 @@ export default function SearchBar({ placeholder, data, setSearchResult }) {
   const handleEnter = (e) => {
     if(e.key === 'Enter') {
       handleSearchIcon();
+      document.activeElement.blur();
     };
   };
   

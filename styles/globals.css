@@ -838,6 +838,7 @@ margin-top: 160px;
   .cart-icon{
     padding: 0%;
     position: absolute;
+    margin-left: 91%;
   }
   .cart-icon svg{
     margin-left: -100%;
@@ -855,6 +856,8 @@ margin-top: 160px;
   }
   .hero-banner-container{
     height: 560px;
+    padding: 20px 20px;
+    border-radius: 0%;
   }
   .hero-banner-image{
     width: 40%;
@@ -867,7 +870,7 @@ margin-top: 160px;
     position: absolute;
     bottom: 5%;
     right: 40%;
-    border-radius: 20%;
+    border-radius: 20px;
   }
   .desc{
     bottom: -200px;
@@ -880,17 +883,17 @@ margin-top: 160px;
     align-self: center;
   }
   .desc p{
-    align-self: center;
+    text-align: center;
   }
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;
   }
   .footer-banner-image{
-    width: 77%;
+    width: 50%;
     left: 30%;
-    top: 6%;
-    height: 56%;
+    top: 33%;
+    height: 48%;
     cursor: pointer;
   }
   .banner-desc .left h3{
@@ -926,9 +929,6 @@ margin-top: 160px;
   .hero-banner-container button{
     margin-top: 90px;
     z-index: 10000;
-  }
-  .desc{
-   bottom: 60px;
   }
   .product-detail-container{
     flex-wrap: wrap;
@@ -973,8 +973,6 @@ margin-top: 160px;
 .top{
   flex-wrap: wrap;
   gap: 10px;
-
-
 }
 .item-desc .bottom{
   margin-top: 30px;

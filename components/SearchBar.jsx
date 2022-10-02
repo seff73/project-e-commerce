@@ -31,14 +31,19 @@ export default function SearchBar({ placeholder, data, setSearchResult }) {
     setSearchValue(itemName);
     setFilteredData([]);
   };
+  
+  const handleSearchIcon = () => {
+    setSearchResult(filteredData);
+    setFilteredData([]);
+    router.push('/results');
+  };
 
   const handleEnter = (e) => {
     if(e.key === 'Enter') {
-      setSearchResult(filteredData);
-      setFilteredData([]);
-      router.push('/results');
-    }
-  }
+      handleSearchIcon();
+    };
+  };
+  
 
   
   return (
@@ -46,7 +51,7 @@ export default function SearchBar({ placeholder, data, setSearchResult }) {
         <div className='search-inputs'>
           <input type='text' placeholder={placeholder} /*value={searchValue}*/ onChange={handleSearch} onKeyDown={handleEnter}/>
           
-          <div className='search-icon'>
+          <div className='search-icon' onClick={handleSearchIcon} >
             <SearchIcon />
           </div>
 

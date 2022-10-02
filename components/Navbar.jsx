@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { CgShoppingCart } from 'react-icons/cg';
 
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
@@ -18,7 +18,7 @@ export default function Navbar() {
       <SearchBar placeholder='Search Smart and Sapiens...' data={allProducts} setSearchResult={setSearchResult}/>
 
       <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>
-        <AiOutlineShopping />
+        <CgShoppingCart />
         <span className='cart-item-qty'>{totalQuantities}</span>
       </button>
 

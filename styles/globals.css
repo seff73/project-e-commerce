@@ -937,11 +937,13 @@ margin-top: 160px;
   .banner-desc{
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
   }
   .banner-desc .right{
     bottom: 7%;
     width: 100%;
     text-align: center;
+    margin: auto;
   }
   .banner-desc button{
     border-radius: 25px;

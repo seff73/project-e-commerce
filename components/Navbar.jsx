@@ -10,12 +10,12 @@ export default function Navbar() {
   const { showCart, setShowCart, cartItems, totalQuantities, allProducts, setSearchResult, setLocalContext, totalPrice, setTotalPrice, setTotalQuatities, setCartItems } = useStateContext();
 
 
-  useEffect(() => {
+  /*useEffect(() => {
     const localData = JSON.parse(localStorage.getItem('state'));
     localData.totalPrice && setLocalContext(localData);
     
     
-  },[]);
+  },[]);*/
   
   
   return (

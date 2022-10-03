@@ -4,6 +4,13 @@ import toast, { Toaster } from 'react-hot-toast';
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+
+    const setLocalContext = ({ totalPrice, totalQuantities, cartItems }) => {
+        setTotalPrice(totalPrice);
+        setTotalQuantities(totalQuantities);
+        setCartItems(cartItems);
+    };
+    
     const [showCart, setShowCart] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -13,6 +20,7 @@ export const StateContext = ({ children }) => {
     const [allProducts, setAllProducts] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
     
+
     let foundProduct;
     let index;
 
@@ -126,6 +134,8 @@ export const StateContext = ({ children }) => {
                 setSearchResult,
 
                 invoiceList,
+                
+                setLocalContext,
                                 
             }}
         >

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { CgShoppingCart } from 'react-icons/cg';
 
@@ -7,7 +7,16 @@ import { useStateContext } from '../context/StateContext';
 import SearchBar from './SearchBar';
 
 export default function Navbar() {
-  const { showCart, setShowCart, totalQuantities, allProducts, setSearchResult } = useStateContext();
+  const { showCart, setShowCart, cartItems, totalQuantities, allProducts, setSearchResult, setLocalContext, totalPrice, setTotalPrice, setTotalQuatities, setCartItems } = useStateContext();
+
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('state'));
+    localData.totalPrice && setLocalContext(localData);
+    
+    
+  },[]);
+  
   
   return (
     <div className='navbar-container'>

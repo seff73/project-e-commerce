@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../context/StateContext';
 import SearchIcon from '@material-ui/icons/Search';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 
 export default function SearchBar({ placeholder, data, setSearchResult }) {
   
+  const { cartItems, totalPrice, totalQuantities } = useStateContext();
   const [ searchValue, setSearchValue ] = useState("");
   const [ filteredData, setFilteredData ] = useState([]);
 
@@ -44,6 +45,15 @@ export default function SearchBar({ placeholder, data, setSearchResult }) {
       document.activeElement.blur();
     };
   };
+  
+  useEffect(() => {
+    cartItems[0] &&
+    localStorage.setItem('state', JSON.stringify({
+      totalPrice: totalPrice, 
+      totalQuantities: totalQuantities, 
+      cartItems: cartItems }
+    ));
+  }, [cartItems])
   
 
   

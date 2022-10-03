@@ -7,8 +7,8 @@ import { useStateContext } from '../context/StateContext';
 
 
 export default function Home({ products, bannerData }) {
-  const { setAllProducts, allProducts } = useStateContext();
-
+  const { setAllProducts, allProducts, setLocalContext, } = useStateContext();
+  
   useEffect(() => {
     setAllProducts(products);
 

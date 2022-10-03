@@ -46,14 +46,14 @@ export default function SearchBar({ placeholder, data, setSearchResult }) {
     };
   };
   
-  /*useEffect(() => {
+  useEffect(() => {
     cartItems[0] &&
     localStorage.setItem('state', JSON.stringify({
       totalPrice: totalPrice, 
       totalQuantities: totalQuantities, 
       cartItems: cartItems }
     ));
-  }, [cartItems])*/
+  }, [cartItems])
   
 
   

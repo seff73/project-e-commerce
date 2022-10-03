@@ -859,9 +859,12 @@ margin-top: 160px;
   .cart-item-qty{
     right: 15%;
     top: 15%;
-    font-size: 68%;
-    width: 65%;
-    height: 45%;
+    font-size: 60%;
+    width: 60%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
   .hero-banner-container{
     height: auto;

@@ -10,7 +10,8 @@ export const StateContext = ({ children }) => {
         setTotalQuantities(totalQuantities);
         setCartItems(cartItems);
     };
-    
+
+    const [handleLocalStorage, setHandleLocalStorage] = useState('load')
     const [showCart, setShowCart] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -136,6 +137,9 @@ export const StateContext = ({ children }) => {
                 invoiceList,
                 
                 setLocalContext,
+
+                handleLocalStorage,
+                setHandleLocalStorage,
                                 
             }}
         >

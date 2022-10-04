@@ -7,15 +7,26 @@ import { useStateContext } from '../context/StateContext';
 import SearchBar from './SearchBar';
 
 export default function Navbar() {
-  const { showCart, setShowCart, cartItems, totalQuantities, allProducts, setSearchResult, setLocalContext, totalPrice, setTotalPrice, setTotalQuatities, setCartItems } = useStateContext();
+  const { 
+    showCart, setShowCart, cartItems, totalQuantities, allProducts, 
+    setSearchResult, setLocalContext, totalPrice, setTotalPrice, 
+    setTotalQuatities, setCartItems, onAdd, handleLocalStorage, setHandleLocalStorage, } = useStateContext();
 
 
-  /*useEffect(() => {
-    const localData = JSON.parse(localStorage.getItem('state'));
-    localData.totalPrice && setLocalContext(localData);
+  useEffect(() => {
+    if(handleLocalStorage === 'load') {
+      const localData = JSON.parse(localStorage.getItem('state'))
+      localData?.cartItems[0] && 
+      localData.cartItems.map((product) => {
+        onAdd(product, product.quantity)
+      });
+    } 
+    else if(handleLocalStorage === 'write') {
+      localStorage.setItem('state', JSON.stringify({ 'cartItems': cartItems }));
+      setHandleLocalStorage('standBy');
+    }
     
-    
-  },[]);*/
+  },[handleLocalStorage]);
   
   
   return (

@@ -9,7 +9,7 @@ import { client, urlFor } from '../../lib/client';
 export default function ProductDetails({ product, products }) {
     const { image, name, details, price, rating } = product;
     const [index, setIndex] = useState(0);
-    const { decQty, incQty, qty, onAdd, setShowCart, allProducts, setAllProducts } = useStateContext();
+    const { decQty, incQty, qty, onAdd, setShowCart, allProducts, setAllProducts, setHandleLocalStorage } = useStateContext();
     
     useEffect(() => {
         if(products.length !== allProducts.length) {
@@ -22,7 +22,13 @@ export default function ProductDetails({ product, products }) {
         onAdd(product, qty);
 
         setShowCart(true);
-    }
+    };
+
+    const handleAddToCart = () => {
+        onAdd(product, qty);
+        setHandleLocalStorage('write');
+    };
+    
 
   return (
     <div>
@@ -79,7 +85,7 @@ export default function ProductDetails({ product, products }) {
                 <div className='buttons'>
                     <button type='button' 
                     className='add-to-cart'
-                    onClick={() => onAdd(product, qty)}>Add to Cart</button>
+                    onClick={handleAddToCart}>Add to Cart</button>
                     <button type='button' 
                     className='buy-now'
                     onClick={handleBuyNow}>Buy Now</button>

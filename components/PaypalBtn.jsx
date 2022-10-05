@@ -50,7 +50,7 @@ export default function PaypalBtn({amount}) {
     <div>
         <div className='paypal-btn-alter' onClick={handleOrder}></div> 
     { monto === totalPrice ?
-        <PayPalButtons className='paypal-btn-main' /*createOrder={async () => {
+        <PayPalButtons className='paypal-btn-main' createOrder={async () => {
             try {
                 const res = await axios({
                     url: "/api/payment",
@@ -70,7 +70,7 @@ export default function PaypalBtn({amount}) {
                 //router.push('/success');
                 console.log(error);
             }
-        }}*/
+        }}
         onCancel = {data => console.log("Canceled Order")}
         /*onApprove = {(data, actions) => {
             //console.log(data.payer.email_address);

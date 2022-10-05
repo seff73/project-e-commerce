@@ -17,13 +17,16 @@ export default function Navbar() {
     if(handleLocalStorage === 'load') {
       const localData = JSON.parse(localStorage.getItem('state'))
       localData?.cartItems[0] && 
-      localData.cartItems.map((product) => {
-        onAdd(product, product.quantity)
-      });
+      localData.cartItems.map((item) => 
+        onAdd(item, item.quantity)
+      );
+      setCartItems(localData.cartItems)
+      
     } 
     else if(handleLocalStorage === 'write') {
       localStorage.setItem('state', JSON.stringify({ 'cartItems': cartItems }));
       setHandleLocalStorage('standBy');
+      
     }
     
   },[handleLocalStorage]);

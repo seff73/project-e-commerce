@@ -20,6 +20,7 @@ export default function ProductDetails({ product, products }) {
 
     const handleBuyNow = () => {
         onAdd(product, qty);
+        setHandleLocalStorage('write')
 
         setShowCart(true);
     };

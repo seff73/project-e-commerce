@@ -11,8 +11,12 @@ import { urlFor } from '../lib/client';
 
 export default function Cart() {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove, setLocalContext } = useStateContext();
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove, setHandleLocalStorage } = useStateContext();
   
+  const handleRemove = (item) => {
+    onRemove(item);
+    setHandleLocalStorage('write');
+  }
   
   return (
     <div className='cart-wrapper' ref={cartRef}> 
@@ -71,7 +75,7 @@ export default function Cart() {
                   <button
                     type='button'
                     className='remove-item'
-                    onClick={() => onRemove(item)}
+                    onClick={() => handleRemove(item)}
                   >
                     {/*<TiDeleteOutline />*/}
                     Delete

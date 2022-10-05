@@ -5,12 +5,6 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
 
-    const setLocalContext = ({ totalPrice, totalQuantities, cartItems }) => {
-        setTotalPrice(totalPrice);
-        setTotalQuantities(totalQuantities);
-        setCartItems(cartItems);
-    };
-
     const [handleLocalStorage, setHandleLocalStorage] = useState('load')
     const [showCart, setShowCart] = useState(false);
     const [cartItems, setCartItems] = useState([]);
@@ -136,8 +130,6 @@ export const StateContext = ({ children }) => {
 
                 invoiceList,
                 
-                setLocalContext,
-
                 handleLocalStorage,
                 setHandleLocalStorage,
                                 

@@ -1024,7 +1024,7 @@ margin-top: 160px;
 }
 .top{
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0px;
 }
 .item-desc .bottom{
   margin-top: 5px;
@@ -1036,6 +1036,7 @@ margin-top: 160px;
 .flex h4{
   font-size: 12px;
    color: black;
+   margin-left: 0%;
 }
 .cart-bottom{
   padding: 30px;

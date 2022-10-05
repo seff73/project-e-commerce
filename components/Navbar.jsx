@@ -20,7 +20,7 @@ export default function Navbar() {
       localData.cartItems.map((item) => 
         onAdd(item, item.quantity)
       );
-      setCartItems(localData.cartItems)
+      localData && setCartItems(localData.cartItems)
       
     } 
     else if(handleLocalStorage === 'write') {

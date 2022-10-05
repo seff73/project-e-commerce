@@ -869,7 +869,7 @@ margin-top: 160px;
   }
   .hero-banner-container{
     height: auto;
-    padding: 20px 20px;
+    padding: 20px 25px;
     border-radius: 0%;
   }
   .hero-banner-image{
@@ -879,7 +879,7 @@ margin-top: 160px;
     right: 0%;
     cursor: pointer;
     position: relative;
-    padding: 4%;
+    padding: 6%;
   }
   .hero-banner-info{
     text-align: center;
@@ -961,6 +961,9 @@ margin-top: 160px;
   }
   .hero-banner-container button{
     z-index: 10000;
+  }
+  .product-image{
+    border-radius: 0%;
   }
   .product-detail-container{
     flex-wrap: wrap;
@@ -1057,11 +1060,13 @@ margin-top: 160px;
 }
 .success, .cancel {
    width: 370px;
-  margin-top: 100px;
+  margin-top: 10%;
   padding: 20px;
 }
 .success{
   height: 350px;
+  border-radius: 0%;
+
 }
 .success h2{
   font-size: 17px;
@@ -1070,5 +1075,10 @@ margin-top: 160px;
   width: 100%;
   max-width: 300px;
   margin: auto;
+}
+.btn{
+  border-radius: 25px;
+  background-color: #1477ff;
+  margin-top: 5%;
 }
 }

@@ -1040,7 +1040,8 @@ margin-top: 160px;
 }
 .cart-bottom{
   padding: 30px;
-  bottom: 5%;
+  bottom: 0%;
+  position: inherit;
 }
 
 .total h3{

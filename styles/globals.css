@@ -67,12 +67,13 @@ width: 100%;
 .logo{
   color: gray;
   font-size: 18px;
-  margin-top: 14px;
+  margin-top: 13px;
 
 }
 .search{
-  margin-top: 12px;
-  padding: 5px;
+  margin-top: 2px;
+  padding: 0px;
+  margin-bottom: 6px;
 }
 .search-inputs{
   width: 338px;
@@ -813,10 +814,11 @@ margin-top: 80px;
     flex-direction: column;
   }
   .logo{
-    font-size: 20px;
-    margin-top: 12px;
+    font-size: 5px;
+    margin-top: 6px;
     margin-left: 3%;
-    padding-bottom: 2%;
+    padding-bottom: 0%;
+    width: 30%;
   }
   .search{
     margin-top: 0%;
@@ -854,7 +856,7 @@ margin-top: 80px;
     margin-left: -75%;
     width: 35px;
     height: 35px;
-    margin-top: 25%;
+    margin-top: 30%;
     color: #FFFFFF;
   }
   .cart-item-qty{

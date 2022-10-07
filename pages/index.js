@@ -12,7 +12,7 @@ export default function Home({ products, bannerData }) {
   useEffect(() => {
     setAllProducts(products);
 
-  }, [])
+  }, [products])
   
 
   
